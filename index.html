@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en-AU" prefix="og: https://ogp.me/ns#">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Frontline Engineering — Precision Woodworking Solutions</title>
+<meta name="description" content="Frontline Engineering: Industrial woodworking presses, clamps & contour cutting devices. 400% productivity increase guaranteed. Australian manufactured.">
+<link rel="canonical" href="https://frontlineengineering.com.au/">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Home - Frontline Engineering">
+<meta property="og:description" content="Frontline Engineering's best products are Bandsaw Contour Cutting Device, Wood Panel Clamps, and 3600mm FrontLine Press.">
+<meta property="og:url" content="https://frontlineengineering.com.au/">
+<meta property="og:site_name" content="Frontline Engineering">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Home - Frontline Engineering">
+<meta name="twitter:description" content="Frontline Engineering's best products are Bandsaw Contour Cutting Device, Wood Panel Clamps, and 3600mm FrontLine Press.">
+<style>
+:root {
+  --primary: #2ea3f2;
+  --primary-dark: #1d7bc7;
+  --primary-light: #e8f4fd;
+  --bg: #ffffff;
+  --bg-alt: #f4f7fa;
+  --fg: #333333;
+  --muted: #666666;
+  --card: #ffffff;
+  --border: rgba(0,0,0,0.08);
+  --glass: rgba(255,255,255,0.88);
+  --shadow-soft: 0 4px 24px -8px rgba(0,0,0,0.06);
+  --shadow-hover: 0 12px 40px -12px rgba(0,0,0,0.1);
+  --radius-lg: 16px;
+  --radius-md: 12px;
+  --radius-sm: 8px;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+body {
+  font-family: 'Open Sans', Arial, sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* === STICKY CTA === */
+.sticky-cta {
+  position: fixed; top: 20px; right: 20px; z-index: 10000;
+  background: var(--primary); color: #fff; padding: 14px 28px;
+  border-radius: 999px; font-weight: 600; font-size: 0.9rem;
+  text-decoration: none; box-shadow: 0 4px 20px rgba(46,163,242,0.35);
+  transition: transform 0.3s var(--ease-spring), box-shadow 0.3s var(--ease-smooth);
+  display: flex; align-items: center; gap: 8px; letter-spacing: -0.01em;
+}
+.sticky-cta:hover { transform: translateY(-2px) scale(1.05); box-shadow: 0 8px 30px rgba(46,163,242,0.45); }
+.sticky-cta:active { transform: scale(0.97); }
+.sticky-cta .arrow { width: 20px; height: 20px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: transform 0.3s var(--ease-spring); }
+.sticky-cta:hover .arrow { transform: translate(2px, -1px); }
+
+/* === HEADER === */
+.site-header {
+  position: fixed; top: 20px; left: 50%; transform: translateX(-50%); z-index: 9999;
+  width: calc(100% - 40px); max-width: 1200px;
+  background: var(--glass); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--border); border-radius: var(--radius-lg);
+  padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 72px;
+  transition: box-shadow 0.4s var(--ease-smooth);
+}
+.site-header.scrolled { box-shadow: 0 4px 30px rgba(0,0,0,0.08); }
+.header-logo img { height: 36px; width: auto; }
+.header-nav { display: flex; align-items: center; gap: 28px; }
+.header-nav a { color: var(--fg); text-decoration: none; font-size: 0.875rem; font-weight: 500; opacity: 0.6; transition: opacity 0.3s; }
+.header-nav a:hover { opacity: 1; }
+.header-cta { background: var(--primary); color: #fff; padding: 10px 24px; border-radius: 999px; font-size: 0.875rem; font-weight: 600; text-decoration: none; transition: transform 0.3s var(--ease-spring); }
+.header-cta:hover { transform: scale(1.05); }
+.mobile-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; }
+.mobile-toggle span { width: 24px; height: 2px; background: var(--fg); border-radius: 2px; transition: all 0.4s; transform-origin: center; }
+.mobile-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.mobile-toggle.active span:nth-child(2) { opacity: 0; }
+.mobile-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+.mobile-nav { display: none; position: fixed; inset: 0; background: rgba(255,255,255,0.97); backdrop-filter: blur(30px); z-index: 9998; flex-direction: column; align-items: center; justify-content: center; gap: 32px; }
+.mobile-nav.active { display: flex; }
+.mobile-nav a { font-size: 1.5rem; font-weight: 600; color: var(--fg); text-decoration: none; opacity: 0; transform: translateY(20px); transition: all 0.5s var(--ease-out); }
+.mobile-nav.active a { opacity: 1; transform: translateY(0); }
+.mobile-nav.active a:nth-child(1) { transition-delay: 0.1s; }
+.mobile-nav.active a:nth-child(2) { transition-delay: 0.18s; }
+.mobile-nav.active a:nth-child(3) { transition-delay: 0.26s; }
+.mobile-nav.active a:nth-child(4) { transition-delay: 0.34s; }
+.mobile-nav.active a:nth-child(5) { transition-delay: 0.42s; }
+
+/* === HERO === */
+.hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 120px 40px 80px; position: relative; overflow: hidden; }
+.hero::before { content: ''; position: absolute; top: -20%; right: -10%; width: 600px; height: 600px; background: radial-gradient(circle, rgba(46,163,242,0.06) 0%, transparent 70%); border-radius: 50%; pointer-events: none; }
+.hero-content { max-width: 800px; text-align: center; position: relative; z-index: 2; }
+.hero-eyebrow { display: inline-block; background: rgba(46,163,242,0.08); color: var(--primary); padding: 6px 16px; border-radius: 999px; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 24px; opacity: 0; transform: translateY(16px); animation: fadeUp 0.8s var(--ease-out) 0.2s forwards; }
+.hero h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 700; line-height: 1.05; letter-spacing: -0.03em; margin-bottom: 20px; opacity: 0; transform: translateY(24px); animation: fadeUp 0.8s var(--ease-out) 0.4s forwards; }
+.hero h1 span { color: var(--primary); }
+.hero-sub { font-size: clamp(1rem, 2vw, 1.25rem); color: var(--muted); max-width: 600px; margin: 0 auto 40px; line-height: 1.7; opacity: 0; transform: translateY(24px); animation: fadeUp 0.8s var(--ease-out) 0.6s forwards; }
+.hero-cta-group { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; opacity: 0; transform: translateY(24px); animation: fadeUp 0.8s var(--ease-out) 0.8s forwards; }
+.btn-primary { display: inline-flex; align-items: center; gap: 10px; background: var(--primary); color: #fff; padding: 16px 32px; border-radius: 999px; font-weight: 600; font-size: 0.95rem; text-decoration: none; border: none; cursor: pointer; transition: transform 0.3s var(--ease-spring), box-shadow 0.3s; box-shadow: 0 4px 20px rgba(46,163,242,0.3); }
+.btn-primary:hover { transform: translateY(-2px) scale(1.02); box-shadow: 0 8px 30px rgba(46,163,242,0.4); }
+.btn-primary:active { transform: scale(0.97); }
+.btn-primary .btn-icon { width: 22px; height: 22px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: transform 0.3s; }
+.btn-primary:hover .btn-icon { transform: translate(2px, -1px); }
+.btn-secondary { display: inline-flex; align-items: center; gap: 8px; background: transparent; color: var(--fg); padding: 16px 32px; border-radius: 999px; font-weight: 600; font-size: 0.95rem; text-decoration: none; border: 1.5px solid var(--border); cursor: pointer; transition: all 0.3s; }
+.btn-secondary:hover { border-color: var(--fg); transform: translateY(-2px); }
+@keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+
+/* === TRUST BADGES === */
+.trust-strip { display: flex; align-items: center; justify-content: center; gap: 40px; padding: 40px 20px; flex-wrap: wrap; opacity: 0; animation: fadeUp 0.8s var(--ease-out) 1s forwards; }
+.trust-item { display: flex; align-items: center; gap: 8px; font-size: 0.8rem; color: var(--muted); font-weight: 500; }
+.trust-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--primary); }
+
+/* === BENEFITS === */
+.benefits { padding: 100px 40px; max-width: 1200px; margin: 0 auto; }
+.section-eyebrow { display: inline-block; background: rgba(46,163,242,0.08); color: var(--primary); padding: 6px 16px; border-radius: 999px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 16px; }
+.section-title { font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; letter-spacing: -0.02em; line-height: 1.15; margin-bottom: 16px; }
+.section-desc { font-size: 1.1rem; color: var(--muted); max-width: 560px; line-height: 1.7; }
+.benefits-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 60px; }
+.benefit-card { padding: 40px 32px; border-radius: var(--radius-md); background: var(--card); border: 1px solid var(--border); transition: all 0.5s var(--ease-smooth); opacity: 0; transform: translateY(24px); }
+.benefit-card.visible { opacity: 1; transform: translateY(0); }
+.benefit-card:hover { border-color: rgba(46,163,242,0.2); box-shadow: var(--shadow-hover); transform: translateY(-6px); }
+.benefit-icon { width: 52px; height: 52px; border-radius: 16px; background: rgba(46,163,242,0.08); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 20px; }
+.benefit-card h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 12px; letter-spacing: -0.01em; }
+.benefit-card p { font-size: 0.95rem; color: var(--muted); line-height: 1.7; }
+
+/* === PRODUCTS BENTO === */
+.products { padding: 100px 40px; background: var(--bg-alt); }
+.products-container { max-width: 1200px; margin: 0 auto; }
+.products-header { margin-bottom: 60px; }
+.products-header h2 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; letter-spacing: -0.02em; margin-bottom: 12px; }
+.products-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 24px; }
+.product-card { background: var(--card); border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--border); transition: all 0.5s var(--ease-smooth); opacity: 0; transform: translateY(24px); }
+.product-card.visible { opacity: 1; transform: translateY(0); }
+.product-card:hover { border-color: rgba(46,163,242,0.2); box-shadow: var(--shadow-hover); transform: translateY(-4px); }
+.product-card.span-8 { grid-column: span 8; }
+.product-card.span-4 { grid-column: span 4; }
+.product-img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; }
+.product-body { padding: 24px; }
+.product-tag { display: inline-block; background: rgba(46,163,242,0.08); color: var(--primary); padding: 4px 12px; border-radius: 999px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 10px; }
+.product-body h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.01em; }
+.product-body p { font-size: 0.875rem; color: var(--muted); line-height: 1.6; margin-bottom: 16px; }
+.product-specs { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 16px; }
+.spec-badge { font-size: 0.75rem; color: var(--fg); background: var(--bg-alt); padding: 6px 12px; border-radius: 8px; font-weight: 500; }
+.product-actions { display: flex; gap: 10px; align-items: center; }
+.product-actions a { font-size: 0.85rem; font-weight: 600; color: var(--primary); text-decoration: none; display: flex; align-items: center; gap: 6px; transition: gap 0.3s; }
+.product-actions a:hover { gap: 10px; }
+.product-actions .spec-link { color: var(--muted); font-weight: 400; }
+
+/* === BUNDLES === */
+.bundles { padding: 80px 40px; max-width: 1200px; margin: 0 auto; }
+.bundles-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 40px; }
+.bundle-card { padding: 36px 28px; border-radius: var(--radius-md); background: var(--card); border: 1px solid var(--border); position: relative; overflow: hidden; transition: all 0.5s var(--ease-smooth); opacity: 0; transform: translateY(24px); }
+.bundle-card.visible { opacity: 1; transform: translateY(0); }
+.bundle-card:hover { border-color: rgba(46,163,242,0.2); box-shadow: var(--shadow-hover); }
+.bundle-card.popular::before { content: 'Best Seller'; position: absolute; top: 16px; right: -32px; background: var(--primary); color: #fff; padding: 4px 32px; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; transform: rotate(45deg); }
+.bundle-card h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 8px; }
+.bundle-card .bundle-price { font-size: 1.5rem; font-weight: 700; color: var(--primary); margin: 16px 0; }
+.bundle-card ul { list-style: none; margin-bottom: 24px; }
+.bundle-card ul li { font-size: 0.875rem; color: var(--muted); padding: 6px 0; padding-left: 20px; position: relative; }
+.bundle-card ul li::before { content: '+'; position: absolute; left: 0; color: var(--primary); font-weight: 700; }
+
+/* === TESTIMONIALS === */
+.testimonials { padding: 100px 40px; background: var(--bg-alt); }
+.testimonials-container { max-width: 1200px; margin: 0 auto; }
+.testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 40px; }
+.testimonial-card { padding: 36px 28px; border-radius: var(--radius-md); background: var(--card); border: 1px solid var(--border); opacity: 0; transform: translateY(24px); transition: all 0.5s var(--ease-smooth); }
+.testimonial-card.visible { opacity: 1; transform: translateY(0); }
+.testimonial-card:hover { box-shadow: var(--shadow-hover); }
+.testimonial-stars { color: var(--primary); font-size: 0.9rem; margin-bottom: 16px; letter-spacing: 2px; }
+.testimonial-text { font-size: 0.95rem; line-height: 1.7; color: var(--fg); margin-bottom: 20px; font-style: italic; }
+.testimonial-author { font-size: 0.85rem; font-weight: 600; }
+.testimonial-company { font-size: 0.8rem; color: var(--muted); }
+
+/* === ROI CALCULATOR === */
+.roi-section { padding: 100px 40px; max-width: 900px; margin: 0 auto; }
+.roi-container { background: var(--card); border-radius: var(--radius-lg); border: 1px solid var(--border); overflow: hidden; box-shadow: var(--shadow-soft); }
+.roi-header { padding: 48px 40px 0; text-align: center; }
+.roi-header h2 { font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 700; letter-spacing: -0.02em; margin-bottom: 12px; }
+.roi-header p { color: var(--muted); font-size: 1rem; line-height: 1.7; }
+.roi-form { padding: 40px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.roi-form .full-width { grid-column: 1 / -1; }
+.roi-field label { display: block; font-size: 0.8rem; font-weight: 600; color: var(--fg); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.05em; }
+.roi-field input, .roi-field select { width: 100%; padding: 14px 18px; border: 1.5px solid var(--border); border-radius: var(--radius-sm); font-size: 1rem; font-family: inherit; color: var(--fg); background: var(--bg); transition: all 0.3s var(--ease-smooth); outline: none; }
+.roi-field input:focus, .roi-field select:focus { border-color: var(--primary); box-shadow: 0 0 0 4px rgba(46,163,242,0.08); }
+.roi-field input[type="range"] { padding: 0; border: none; background: transparent; accent-color: var(--primary); }
+.roi-results { padding: 0 40px 40px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; opacity: 0; transition: opacity 0.5s; }
+.roi-results.active { opacity: 1; }
+.result-item { background: var(--bg-alt); padding: 24px; border-radius: var(--radius-sm); border: 1px solid var(--border); }
+.result-item.highlight { background: rgba(46,163,242,0.05); border-color: rgba(46,163,242,0.2); grid-column: 1 / -1; }
+.result-label { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; margin-bottom: 8px; }
+.result-value { font-size: 1.75rem; font-weight: 700; letter-spacing: -0.02em; color: var(--fg); }
+.result-value.accent { color: var(--primary); }
+.roi-formula { padding: 24px 40px 40px; }
+.formula-toggle { background: none; border: none; color: var(--primary); font-size: 0.85rem; font-weight: 600; cursor: pointer; padding: 0; }
+.formula-toggle:hover { text-decoration: underline; }
+.formula-panel { max-height: 0; overflow: hidden; transition: max-height 0.4s var(--ease-smooth); }
+.formula-panel.open { max-height: 400px; }
+.formula-content { padding: 20px 0 0; font-family: 'Courier New', monospace; font-size: 0.8rem; color: var(--muted); line-height: 1.8; white-space: pre-wrap; background: var(--bg-alt); padding: 20px; border-radius: var(--radius-sm); margin-top: 12px; }
+
+/* === SEGMENTS === */
+.segments { padding: 100px 40px; background: var(--bg-alt); }
+.segments-container { max-width: 1200px; margin: 0 auto; }
+.segments-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 40px; }
+.segment-card { padding: 36px 24px; border-radius: var(--radius-md); background: var(--card); border: 1px solid var(--border); text-align: center; transition: all 0.5s var(--ease-smooth); opacity: 0; transform: translateY(24px); }
+.segment-card.visible { opacity: 1; transform: translateY(0); }
+.segment-card:hover { border-color: rgba(46,163,242,0.2); box-shadow: var(--shadow-hover); transform: translateY(-4px); }
+.segment-icon { font-size: 2rem; margin-bottom: 16px; display: block; }
+.segment-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
+.segment-card p { font-size: 0.85rem; color: var(--muted); line-height: 1.6; }
+
+/* === FOOTER === */
+.site-footer { padding: 60px 40px; background: var(--fg); color: rgba(255,255,255,0.6); }
+.footer-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+.footer-logo img { height: 30px; width: auto; filter: brightness(0) invert(1); }
+.footer-links { display: flex; gap: 24px; }
+.footer-links a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.85rem; transition: color 0.3s; }
+.footer-links a:hover { color: #fff; }
+.footer-copy { font-size: 0.8rem; }
+
+/* === QUOTE WIZARD MODAL === */
+.modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.5); backdrop-filter: blur(8px); z-index: 10001; display: flex; align-items: center; justify-content: center; padding: 20px; opacity: 0; visibility: hidden; transition: all 0.4s var(--ease-smooth); }
+.modal-overlay.active { opacity: 1; visibility: visible; }
+.modal-box { background: var(--card); border-radius: var(--radius-lg); width: 100%; max-width: 640px; max-height: 90vh; overflow-y: auto; transform: translateY(20px) scale(0.97); transition: transform 0.4s var(--ease-spring); }
+.modal-overlay.active .modal-box { transform: translateY(0) scale(1); }
+.modal-header { padding: 32px 32px 0; display: flex; justify-content: space-between; align-items: flex-start; }
+.modal-header h2 { font-size: 1.5rem; font-weight: 700; letter-spacing: -0.02em; }
+.modal-close { width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--border); background: transparent; font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s; color: var(--fg); }
+.modal-close:hover { background: var(--bg-alt); }
+.modal-body { padding: 32px; }
+.modal-steps { display: flex; gap: 8px; margin-bottom: 32px; }
+.modal-step { flex: 1; height: 4px; border-radius: 4px; background: #e5e5e5; transition: background 0.3s; }
+.modal-step.active { background: var(--primary); }
+.modal-step.done { background: var(--primary); opacity: 0.5; }
+.wizard-step { display: none; }
+.wizard-step.active { display: block; animation: fadeUp 0.4s var(--ease-out); }
+.wizard-step h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 8px; }
+.wizard-step p { color: var(--muted); font-size: 0.9rem; margin-bottom: 24px; }
+.wizard-options { display: flex; flex-direction: column; gap: 10px; }
+.wizard-option { padding: 16px 20px; border: 1.5px solid var(--border); border-radius: var(--radius-sm); cursor: pointer; transition: all 0.3s; display: flex; align-items: center; gap: 14px; font-size: 0.95rem; }
+.wizard-option:hover { border-color: var(--primary); background: rgba(46,163,242,0.03); }
+.wizard-option.selected { border-color: var(--primary); background: rgba(46,163,242,0.05); }
+.wizard-option .radio { width: 20px; height: 20px; border-radius: 50%; border: 2px solid #ddd; display: flex; align-items: center; justify-content: center; transition: all 0.3s; flex-shrink: 0; }
+.wizard-option.selected .radio { border-color: var(--primary); background: var(--primary); }
+.wizard-option.selected .radio::after { content: ''; width: 8px; height: 8px; border-radius: 50%; background: #fff; }
+.wizard-nav { display: flex; justify-content: space-between; margin-top: 32px; gap: 12px; }
+.wizard-btn { padding: 14px 28px; border-radius: 999px; font-weight: 600; font-size: 0.9rem; cursor: pointer; transition: all 0.3s var(--ease-spring); border: none; }
+.wizard-btn.primary { background: var(--primary); color: #fff; }
+.wizard-btn.primary:hover { transform: scale(1.02); box-shadow: 0 4px 20px rgba(46,163,242,0.3); }
+.wizard-btn.secondary { background: transparent; color: var(--fg); border: 1.5px solid var(--border); }
+.wizard-btn.secondary:hover { border-color: var(--fg); }
+.wizard-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+/* === LEAD CARD === */
+.lead-card { background: var(--bg-alt); border: 2px dashed var(--primary); border-radius: var(--radius-md); padding: 24px; margin-top: 20px; }
+.lead-card h4 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--primary); margin-bottom: 16px; }
+.lead-card dl { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.lead-card dt { font-size: 0.7rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; }
+.lead-card dd { font-size: 0.95rem; font-weight: 600; }
+
+/* === RESPONSIVE === */
+@media (max-width: 1024px) {
+  .benefits-grid { grid-template-columns: repeat(2, 1fr); }
+  .products-grid { grid-template-columns: repeat(6, 1fr); }
+  .product-card.span-8, .product-card.span-4, .product-card.span-6 { grid-column: span 6; }
+  .bundles-grid { grid-template-columns: repeat(2, 1fr); }
+  .segments-grid { grid-template-columns: repeat(2, 1fr); }
+  .roi-form { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+  .sticky-cta { top: auto; bottom: 20px; right: 16px; padding: 12px 20px; font-size: 0.85rem; }
+  .site-header { width: calc(100% - 24px); top: 12px; padding: 0 16px; }
+  .header-nav { display: none; }
+  .mobile-toggle { display: flex; }
+  .hero { padding: 100px 20px 60px; min-height: auto; }
+  .benefits, .products, .bundles, .testimonials, .roi-section, .segments { padding: 60px 20px; }
+  .benefits-grid, .bundles-grid, .segments-grid, .testimonials-grid { grid-template-columns: 1fr; }
+  .product-card.span-8, .product-card.span-4, .product-card.span-6 { grid-column: span 1; }
+  .products-grid { grid-template-columns: 1fr; }
+  .roi-results { grid-template-columns: 1fr; }
+  .footer-container { flex-direction: column; text-align: center; }
+  .footer-links { flex-wrap: wrap; justify-content: center; }
+  .trust-strip { gap: 20px; }
+}
+@media (max-width: 479px) {
+  .hero h1 { font-size: 2rem; }
+  .hero-cta-group { flex-direction: column; align-items: center; }
+  .btn-primary, .btn-secondary { width: 100%; justify-content: center; }
+}
+.reveal { opacity: 0; transform: translateY(24px); transition: all 0.7s var(--ease-out); }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<a href="#quote-wizard" class="sticky-cta" aria-label="Request a Quote"><span>Get a Quote</span><span class="arrow">→</span></a>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="#home">Home</a><a href="#products">Products</a><a href="#roi-calculator">ROI Calculator</a><a href="#segments">Who We Serve</a><a href="#quote-wizard">Request a Quote</a>
+</div>
+
+<header class="site-header" id="siteHeader">
+  <div class="header-logo"><a href="#home"><img src="Home%20-%20Frontline%20Engineering_files/FrontlineEngineering_logo.png" alt="Frontline Engineering" width="212" height="45"></a></div>
+  <nav class="header-nav">
+    <a href="#home">Home</a><a href="#products">Products</a><a href="#roi-calculator">ROI Calculator</a><a href="#segments">Who We Serve</a><a href="#quote-wizard" class="header-cta">Request a Quote</a>
+  </nav>
+  <div class="mobile-toggle" id="mobileToggle"><span></span><span></span><span></span></div>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <span class="hero-eyebrow">30+ Years of Australian Innovation</span>
+      <h1>Precision Woodworking<br><span>Solutions</span></h1>
+      <p class="hero-sub">Advanced clamping and press technologies designed to simplify your woodworking processes while delivering unmatched quality. From mobile presses to contour cutting devices.</p>
+      <div class="hero-cta-group">
+        <a href="#quote-wizard" class="btn-primary">Request a Quote<span class="btn-icon">→</span></a>
+        <a href="#roi-calculator" class="btn-secondary">Calculate Your Savings</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="trust-strip reveal">
+    <div class="trust-item"><span class="trust-dot"></span>30+ Years Experience</div>
+    <div class="trust-item"><span class="trust-dot"></span>Australian Made</div>
+    <div class="trust-item"><span class="trust-dot"></span>ISO 9001 Certified</div>
+    <div class="trust-item"><span class="trust-dot"></span>5-Year Warranty</div>
+    <div class="trust-item"><span class="trust-dot"></span>Free Shipping over $500</div>
+  </div>
+
+  <section class="benefits" id="benefits">
+    <div class="reveal"><span class="section-eyebrow">Why Frontline</span><h2 class="section-title">Increased Productivity<br>Guaranteed</h2><p class="section-desc">Our systems streamline processes, reducing setup time and increasing output by up to 400%. Achieve more in less time with minimal effort.</p></div>
+    <div class="benefits-grid">
+      <div class="benefit-card reveal" data-delay="0"><div class="benefit-icon">⚡</div><h3>Increased Productivity</h3><p>Our systems streamline processes, reducing setup time and increasing output by up to 400%. Achieve more in less time with minimal effort.</p></div>
+      <div class="benefit-card reveal" data-delay="100"><div class="benefit-icon">🎯</div><h3>Precision &amp; Efficiency</h3><p>Designed for flawless results, our technology ensures perfectly flat panels and stronger joins, cutting down on manual adjustments and rework.</p></div>
+      <div class="benefit-card reveal" data-delay="200"><div class="benefit-icon">💰</div><h3>Reduced Labor Costs</h3><p>No skilled labor required. Our systems simplify the clamping process, allowing you to reduce labor costs while maintaining high-quality results.</p></div>
+    </div>
+  </section>
+
+  <section class="products" id="products">
+    <div class="products-container">
+      <div class="products-header reveal"><span class="section-eyebrow">Our Range</span><h2>Shop Our Products</h2><p style="color:var(--muted);margin-top:12px;">High-performance woodworking machinery with detailed specs and video demonstrations.</p></div>
+      <div class="products-grid">
+        <div class="product-card span-8 reveal" data-delay="0"><img class="product-img" src="Home%20-%20Frontline%20Engineering_files/frontline-vertical-mobile.jpg" alt="Frontline Vertical Mobile Clamping Press" loading="lazy"><div class="product-body"><span class="product-tag">Mobile Press</span><h3>Frontline Vertical Mobile Clamping Press</h3><p>The powerhouse of your workshop. Portable yet powerful, delivering consistent clamping force wherever you need it.</p><div class="product-specs"><span class="spec-badge">⚡ 400% faster</span><span class="spec-badge">📏 3600mm capacity</span><span class="spec-badge">🔧 Mobile</span></div><div class="product-actions"><a href="https://frontlineengineering.com.au/product/frontline-vertical-mobile-clamping-press/">View Details →</a><a href="#" class="spec-link" onclick="alert('Spec sheet download initiated')">📥 Download Spec Sheet</a></div></div></div>
+        <div class="product-card span-4 reveal" data-delay="100"><img class="product-img" src="Home%20-%20Frontline%20Engineering_files/bandsaw_pic.jpg" alt="Bandsaw Contour Cutting Device" loading="lazy"><div class="product-body"><span class="product-tag">Cutting</span><h3>Bandsaw Contour Cutting Device</h3><p>Precision contour cutting for complex shapes and profiles.</p><div class="product-specs"><span class="spec-badge">🎯 Precision</span><span class="spec-badge">🔄 Contour</span></div><div class="product-actions"><a href="https://frontlineengineering.com.au/product/bandsaw-device/">View Details →</a><a href="#" class="spec-link" onclick="alert('Spec sheet download initiated')">📥 Spec Sheet</a></div></div></div>
+        <div class="product-card span-4 reveal" data-delay="200"><img class="product-img" src="Home%20-%20Frontline%20Engineering_files/product3.jpg" alt="Frontline Clamps" loading="lazy"><div class="product-body"><span class="product-tag">Clamps</span><h3>Frontline Clamps — Flatten &amp; Clamp in One Action</h3><p>Our signature design eliminates the two-step process, saving valuable workshop time.</p><div class="product-specs"><span class="spec-badge">⚡ 2-in-1</span><span class="spec-badge">🛠️ No skilled labor</span></div><div class="product-actions"><a href="https://frontlineengineering.com.au/product/frontline-clamps/">View Details →</a><a href="#" class="spec-link" onclick="alert('Spec sheet download initiated')">📥 Spec Sheet</a></div></div></div>
+        <div class="product-card span-8 reveal" data-delay="300"><img class="product-img" src="Home%20-%20Frontline%20Engineering_files/frontLine-press.jpg" alt="3600mm FrontLine Press" loading="lazy"><div class="product-body"><span class="product-tag">Industrial</span><h3>3600mm FrontLine Press</h3><p>The flagship industrial press for high-volume production. Flatten and clamp in a single action with unbeatable precision.</p><div class="product-specs"><span class="spec-badge">📏 3600mm</span><span class="spec-badge">⚡ 400% productivity</span><span class="spec-badge">🏭 Industrial grade</span></div><div class="product-actions"><a href="https://frontlineengineering.com.au/product/3600mm-frontline-press/">View Details →</a><a href="#" class="spec-link" onclick="alert('Spec sheet download initiated')">📥 Download Spec Sheet</a></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bundles">
+    <div class="bundles-container" style="max-width:1200px;margin:0 auto;padding:0 40px;">
+      <div class="reveal"><span class="section-eyebrow">Smart Bundles</span><h2 class="section-title">Use-Case Product Bundles</h2><p style="color:var(--muted);max-width:560px;">Grouped by workshop size — get exactly what you need, at a better value.</p></div>
+      <div class="bundles-grid">
+        <div class="bundle-card reveal" data-delay="0"><h3>🏪 Small Workshop Starter</h3><p>For solo operators and hobbyists getting serious.</p><ul><li>Mobile Press</li><li>4x Clamps</li><li>Bandsaw Device</li></ul><div class="bundle-price">From $4,800</div><a href="#quote-wizard" class="btn-primary" style="width:100%;justify-content:center;">Build My Bundle</a></div>
+        <div class="bundle-card popular reveal" data-delay="100"><h3>🏭 Production Line Package</h3><p>For commercial joineries and high-volume shops.</p><ul><li>3600mm Press</li><li>12x Clamps</li><li>Installation Kit</li></ul><div class="bundle-price">From $18,500</div><a href="#quote-wizard" class="btn-primary" style="width:100%;justify-content:center;">Build My Bundle</a></div>
+        <div class="bundle-card reveal" data-delay="200"><h3>📦 Panel Processing Kit</h3><p>Complete panel workflow solution.</p><ul><li>Bandsaw Device</li><li>6x Clamps</li><li>Dust Extraction</li></ul><div class="bundle-price">From $9,200</div><a href="#quote-wizard" class="btn-primary" style="width:100%;justify-content:center;">Build My Bundle</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials" id="testimonials">
+    <div class="testimonials-container">
+      <div class="reveal" style="text-align:center;"><span class="section-eyebrow">Social Proof</span><h2 class="section-title">Trusted by Australian Woodworkers</h2></div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card reveal" data-delay="0"><div class="testimonial-stars">★★★★★</div><p class="testimonial-text">"The 3600mm Press transformed our production. We went from 20 panels a day to 80. The ROI was obvious within the first month."</p><p class="testimonial-author">— James Mitchell</p><p class="testimonial-company">Mitchell Joinery, Melbourne</p></div>
+        <div class="testimonial-card reveal" data-delay="100"><div class="testimonial-stars">★★★★★</div><p class="testimonial-text">"Finally, a machine that flattens and clamps in one action. No more manual adjustments, no more rework. Our quality scores went through the roof."</p><p class="testimonial-author">— Sarah Chen</p><p class="testimonial-company">Chen Woodworks, Sydney</p></div>
+        <div class="testimonial-card reveal" data-delay="200"><div class="testimonial-stars">★★★★★</div><p class="testimonial-text">"As a small workshop, the Starter Bundle was exactly what we needed. Professional grade equipment at a price that made sense."</p><p class="testimonial-author">— Tom Richards</p><p class="testimonial-company">Richards Cabinet Making, Brisbane</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="roi-section" id="roi-calculator">
+    <div class="roi-container">
+      <div class="roi-header"><span class="section-eyebrow">Interactive Tool</span><h2>ROI Cost-Savings Calculator</h2><p>Enter your workshop details to see exactly how much Frontline Engineering will save you annually.</p></div>
+      <div class="roi-form">
+        <div class="roi-field"><label for="roi-panels">Panels through clamp/press stage, per week</label><input type="number" id="roi-panels" value="100" min="0" max="100000" step="1"></div>
+        <div class="roi-field"><label for="roi-minutes">Manual clamping / pressing time per panel (min)</label><input type="number" id="roi-minutes" value="15" min="0" max="600" step="1"></div>
+        <div class="roi-field"><label for="roi-rate">Labor cost per hour ($)</label><input type="number" id="roi-rate" value="45" min="0" max="500" step="1"></div>
+        <div class="roi-field"><label for="roi-panel-value">Average material value per panel ($)</label><input type="number" id="roi-panel-value" value="50" min="0" max="10000" step="5"></div>
+        <div class="roi-field full-width"><label for="roi-time-saved">Time saved per panel: <strong id="time-saved-val">30</strong>%</label><input type="range" id="roi-time-saved" min="0" max="80" step="1" value="30"></div>
+        <div class="roi-field full-width"><label for="roi-waste">Wastage removed: <strong id="waste-val">50</strong>%</label><input type="range" id="roi-waste" min="0" max="90" step="1" value="50"></div>
+      </div>
+      <div class="roi-results" id="roiResults">
+        <div class="result-item"><div class="result-label">Hours saved / month</div><div class="result-value accent" id="r-hours">—</div></div>
+        <div class="result-item"><div class="result-label">Hours saved / year</div><div class="result-value" id="r-hours-yr">—</div></div>
+        <div class="result-item"><div class="result-label">Annual labor savings</div><div class="result-value accent" id="r-labor">—</div></div>
+        <div class="result-item"><div class="result-label">Annual material savings</div><div class="result-value" id="r-material">—</div></div>
+        <div class="result-item highlight"><div class="result-label">Total annual savings</div><div class="result-value accent" id="r-total">—</div></div>
+        <div class="result-item"><div class="result-label">Payback period (press cost $25k)</div><div class="result-value" id="r-payback">—</div></div>
+      </div>
+      <div class="roi-formula">
+        <button class="formula-toggle" onclick="document.getElementById('fp').classList.toggle('open')">View the arithmetic behind these numbers ▾</button>
+        <div class="formula-panel" id="fp"><div class="formula-content" id="formulaText"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="segments" id="segments">
+    <div class="segments-container">
+      <div class="reveal" style="text-align:center;"><span class="section-eyebrow">Audience</span><h2 class="section-title">Who We Serve</h2><p style="color:var(--muted);max-width:560px;margin:12px auto 0;">Whether you're a solo hobbyist or running a commercial facility, we have the right solution for you.</p></div>
+      <div class="segments-grid">
+        <div class="segment-card reveal" data-delay="0"><span class="segment-icon">🏪</span><h3>Hobbyist Woodworkers</h3><p>Mobile presses and compact clamps for the home workshop.</p></div>
+        <div class="segment-card reveal" data-delay="100"><span class="segment-icon">🪑</span><h3>Boutique Furniture Makers</h3><p>Precision contour cutting and panel clamping for custom pieces.</p></div>
+        <div class="segment-card reveal" data-delay="200"><span class="segment-icon">🏭</span><h3>Commercial Joineries</h3><p>Industrial presses and volume clamping systems for production lines.</p></div>
+        <div class="segment-card reveal" data-delay="300"><span class="segment-icon">🎓</span><h3>Education &amp; Training</h3><p>Full range plus training packages for schools and institutions.</p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="modal-overlay" id="quoteWizard">
+  <div class="modal-box">
+    <div class="modal-header"><h2>Request a Quote</h2><button class="modal-close" onclick="closeWizard()">✕</button></div>
+    <div class="modal-steps"><div class="modal-step active" data-step="1"></div><div class="modal-step" data-step="2"></div><div class="modal-step" data-step="3"></div><div class="modal-step" data-step="4"></div></div>
+    <div class="modal-body">
+      <div class="wizard-step active" data-step="1"><h3>What kind of workshop is yours?</h3><p>Select the option that best describes your operation.</p><div class="wizard-options"><label class="wizard-option" tabindex="0"><input type="radio" name="wiz-workshop" value="hobbyist"><span class="radio"></span><span><span class="block font-semibold">Hobbyist</span><span class="mt-0.5 block text-sm text-muted">Home shed, weekend projects</span></span></label><label class="wizard-option" tabindex="0"><input type="radio" name="wiz-workshop" value="small"><span class="radio"></span><span><span class="block font-semibold">Small Business</span><span class="mt-0.5 block text-sm text-muted">2-5 people, commercial joinery</span></span></label><label class="wizard-option" tabindex="0"><input type="radio" name="wiz-workshop" value="medium"><span class="radio"></span><span><span class="block font-semibold">Medium Shop</span><span class="mt-0.5 block text-sm text-muted">6-20 people, production line</span></span></label><label class="wizard-option" tabindex="0"><input type="radio" name="wiz-workshop" value="large"><span class="radio"></span><span><span class="block font-semibold">Large Facility</span><span class="mt-0.5 block text-sm text-muted">20+ people, high volume</span></span></label></div></div>
+      <div class="wizard-step" data-step="2"><h3>What's your main pain point?</h3><p>What's keeping you up at night?</p><div class="wizard-options"><label class="wizard-option" tabindex="0"><input type="radio" name="wiz-pain" value="setup"><span class="radio"></span><span><span class="block font-semibold">Setup Time</span><span class="mt-0.5 block text-sm text-muted">Killing productivity</span></span></label><label class="wizard-option" tabindex="0"><input type="radio" name="wiz-pain" value="labor"><span class="radio"></span><span><span class="block font-semibold">Labor Costs</span><span class="mt-0.5 block text-sm text-muted">Too high</span></span></label><label class="wizard-option" tabindex="0"><input type="radio" name="wiz-pain" value="quality"><span class="radio"></span><span><span class="block font-semibold">Panel Quality</span><span class="mt-0.5 block text-sm text-muted">Inconsistent</span></span></label><label class="wizard-option" tabindex="0"><input type="radio" name="wiz-pain" value="waste"><span class="radio"></span><span><span class="block font-semibold">Material Waste</span><span class="mt-0.5 block text-sm text-muted">Out of control</span></span></label></div></div>
+      <div class="wizard-step" data-step="3"><h3>Which products interest you?</h3><p>Select all that apply.</p><div class="wizard-options"><label class="wizard-option" tabindex="0"><input type="checkbox" name="wiz-product" value="mobile-press"><span class="radio"></span><span><span class="block font-semibold">Mobile Clamping Press</span></span></label><label class="wizard-option" tabindex="0"><input type="checkbox" name="wiz-product" value="bandsaw"><span class="radio"></span><span><span class="block font-semibold">Bandsaw Contour Cutting</span></span></label><label class="wizard-option" tabindex="0"><input type="checkbox" name="wiz-product" value="clamps"><span class="radio"></span><span><span class="block font-semibold">Frontline Clamps</span></span></label><label class="wizard-option" tabindex="0"><input type="checkbox" name="wiz-product" value="press-3600"><span class="radio"></span><span><span class="block font-semibold">3600mm FrontLine Press</span></span></label></div></div>
+      <div class="wizard-step" data-step="4"><h3>Let's get you in touch</h3><p>We'll respond within 24 hours.</p><div style="display:flex;flex-direction:column;gap:14px;"><input type="text" placeholder="Full Name" class="roi-field-input" id="wizName"><input type="email" placeholder="Email" class="roi-field-input" id="wizEmail"><input type="tel" placeholder="Phone" class="roi-field-input" id="wizPhone"><input type="text" placeholder="Company" class="roi-field-input" id="wizCompany"></div></div>
+      <div class="wizard-nav"><button class="wizard-btn secondary" id="wizPrev" onclick="wizardStep(-1)" disabled>← Back</button><button class="wizard-btn primary" id="wizNext" onclick="wizardStep(1)">Next →</button></div>
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-logo"><a href="#home"><img src="Home%20-%20Frontline%20Engineering_files/FrontlineEngineering_logo.png" alt="Frontline Engineering" width="212" height="45"></a></div>
+    <div class="footer-links"><a href="#home">Home</a><a href="#products">Products</a><a href="#roi-calculator">ROI Calculator</a><a href="#segments">Who We Serve</a><a href="#quote-wizard">Contact</a></div>
+    <div class="footer-copy">Copyright © 2026 Frontline Engineering, all rights reserved</div>
+  </div>
+</footer>
+
+<script>
+// === STICKY HEADER ===
+window.addEventListener('scroll', () => document.getElementById('siteHeader').classList.toggle('scrolled', window.scrollY > 50));
+
+// === MOBILE MENU ===
+const toggle = document.getElementById('mobileToggle'), mobileNav = document.getElementById('mobileNav');
+toggle.addEventListener('click', () => { toggle.classList.toggle('active'); mobileNav.classList.toggle('active'); });
+mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { toggle.classList.remove('active'); mobileNav.classList.remove('active'); }));
+
+// === SCROLL REVEAL ===
+const observer = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) { const d = e.target.dataset.delay || 0; setTimeout(() => e.target.classList.add('visible'), d); observer.unobserve(e.target); }}); }, { threshold: 0.15 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// === WIZARD ===
+let currentStep = 1, totalSteps = 4;
+function wizardStep(dir) {
+  const next = currentStep + dir;
+  if (next < 1 || next > totalSteps) return;
+  if (dir === 1 && next > 1 && next <= 3) {
+    const sel = document.querySelector(`.wizard-step[data-step="${currentStep}"] input:checked`);
+    if (!sel) return;
+  }
+  document.querySelectorAll('.wizard-step').forEach(s => s.classList.remove('active'));
+  document.querySelector(`.wizard-step[data-step="${next}"]`).classList.add('active');
+  document.querySelectorAll('.modal-step').forEach(s => { s.classList.remove('active','done'); if (+s.dataset.step < next) s.classList.add('done'); if (+s.dataset.step === next) s.classList.add('active'); });
+  document.getElementById('wizPrev').disabled = next === 1;
+  document.getElementById('wizNext').textContent = next === totalSteps ? 'Submit →' : 'Next →';
+  if (next === totalSteps) buildLeadCard();
+  currentStep = next;
+}
+document.querySelectorAll('.wizard-option').forEach(opt => {
+  opt.addEventListener('click', () => {
+    const group = opt.closest('.wizard-options');
+    const isCheck = opt.querySelector('input[type="checkbox"]');
+    if (isCheck) { opt.classList.toggle('selected'); }
+    else { group.querySelectorAll('.wizard-option').forEach(o => o.classList.remove('selected')); opt.classList.add('selected'); }
+  });
+  opt.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); opt.click(); }});
+});
+function buildLeadCard() {
+  const name = document.getElementById('wizName').value || '—';
+  const email = document.getElementById('wizEmail').value || '—';
+  const phone = document.getElementById('wizPhone').value || '—';
+  const company = document.getElementById('wizCompany').value || '—';
+  const workshop = document.querySelector('input[name="wiz-workshop"]:checked')?.value || '—';
+  const pain = document.querySelector('input[name="wiz-pain"]:checked')?.value || '—';
+  const products = [...document.querySelectorAll('input[name="wiz-product"]:checked')].map(c => c.value).join(', ') || '—';
+  const card = document.getElementById('leadCard');
+  if (card) card.remove();
+  const lc = document.createElement('div'); lc.className = 'lead-card'; lc.id = 'leadCard';
+  lc.innerHTML = `<h4>📋 Lead Card — Ready for Sales</h4><dl><dt>Name</dt><dd>${name}</dd><dt>Email</dt><dd>${email}</dd><dt>Phone</dt><dd>${phone}</dd><dt>Company</dt><dd>${company}</dd><dt>Workshop</dt><dd>${workshop}</dd><dt>Pain Point</dt><dd>${pain}</dd><dt>Products</dt><dd>${products}</dd></dl><button class="btn-primary" style="margin-top:16px;padding:12px 24px;font-size:0.85rem;" onclick="navigator.clipboard.writeText(document.getElementById('leadCard').innerText).then(()=>alert('Lead card copied to clipboard'))">📋 Copy Lead Card</button>`;
+  document.querySelector('.modal-body').appendChild(lc);
+}
+function closeWizard() { document.getElementById('quoteWizard').classList.remove('active'); }
+document.getElementById('quoteWizard').addEventListener('click', (e) => { if (e.target === e.currentTarget) closeWizard(); });
+document.querySelectorAll('[href="#quote-wizard"]').forEach(link => link.addEventListener('click', (e) => { e.preventDefault(); document.getElementById('quoteWizard').classList.add('active'); currentStep = 1; wizardStep(0); }));
+
+// === ROI CALCULATOR ===
+function calculateROI() {
+  const panels = +document.getElementById('roi-panels').value || 0;
+  const minutes = +document.getElementById('roi-minutes').value || 0;
+  const rate = +document.getElementById('roi-rate').value || 0;
+  const panelValue = +document.getElementById('roi-panel-value').value || 0;
+  const timeSaved = +document.getElementById('roi-time-saved').value / 100;
+  const wasteRemoved = +document.getElementById('roi-waste').value / 100;
+  const hoursPerMonth = (panels * minutes / 60) * 4.33;
+  const hoursSavedMonth = hoursPerMonth * timeSaved;
+  const hoursSavedYear = hoursSavedMonth * 12;
+  const laborSavings = hoursSavedYear * rate;
+  const materialSavings = panels * 52 * wasteRemoved * panelValue;
+  const total = laborSavings + materialSavings;
+  const payback = total > 0 ? (25000 / (total / 12)) : 99;
+  document.getElementById('r-hours').textContent = hoursSavedMonth.toFixed(1) + ' hrs';
+  document.getElementById('r-hours-yr').textContent = hoursSavedYear.toFixed(0) + ' hrs';
+  document.getElementById('r-labor').textContent = '$' + Math.round(laborSavings).toLocaleString();
+  document.getElementById('r-material').textContent = '$' + Math.round(materialSavings).toLocaleString();
+  document.getElementById('r-total').textContent = '$' + Math.round(total).toLocaleString();
+  document.getElementById('r-payback').textContent = payback < 12 ? Math.round(payback) + ' months' : Math.round(payback) + ' months';
+  document.getElementById('roiResults').classList.add('active');
+  document.getElementById('formulaText').textContent = `INPUTS\n  Panels/week: ${panels}\n  Min/panel: ${minutes}\n  $/hr labor: $${rate}\n  Panel value: $${panelValue}\n  Time saved: ${document.getElementById('roi-time-saved').value}%\n  Waste removed: ${document.getElementById('roi-waste').value}%\n\nCALCULATIONS\n  Hours/month = (${panels} × ${minutes} ÷ 60) × 4.33 = ${hoursPerMonth.toFixed(1)} hrs\n  Hours saved/mo = ${hoursPerMonth.toFixed(1)} × ${document.getElementById('roi-time-saved').value}% = ${hoursSavedMonth.toFixed(1)} hrs\n  Annual labor saved = ${hoursSavedMonth.toFixed(1)} × 12 × $${rate} = $${laborSavings.toFixed(0)}\n  Panels saved/yr = ${panels} × 52 × ${document.getElementById('roi-waste').value}% = ${Math.round(panels * 52 * wasteRemoved)}\n  Annual material saved = ${Math.round(panels * 52 * wasteRemoved)} × $${panelValue} = $${materialSavings.toFixed(0)}\n  Total annual = $${Math.round(laborSavings)} + $${Math.round(materialSavings)} = $${Math.round(total)}\n  Payback = $${Math.round(total/12)}/mo → $${Math.round(payback)} months`;
+}
+['roi-panels','roi-minutes','roi-rate','roi-panel-value','roi-time-saved','roi-waste'].forEach(id => document.getElementById(id).addEventListener('input', calculateROI));
+document.getElementById('roi-time-saved').addEventListener('input', (e) => document.getElementById('time-saved-val').textContent = e.target.value);
+document.getElementById('roi-waste').addEventListener('input', (e) => document.getElementById('waste-val').textContent = e.target.value);
+calculateROI();
+</script>
+</body>
+</html>
